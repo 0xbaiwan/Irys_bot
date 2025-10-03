@@ -4,7 +4,7 @@
 
 
 application_settings:
-  threads: 10 # 使用的线程数，每个线程将使用一个账户
+  threads: 2 # 使用的线程数，每个线程将使用一个账户
   database_url: "sqlite://./database.sqlite3" # SQLite 或 postgres，例如 sqlite://database.db 或 postgres://user:password@localhost/dbname
   shuffle_accounts: true # 在启动模块前打乱账户顺序
   check_uniqueness_of_proxies: true # 检查代理是否唯一，如果为 true 则会移除重复代理
@@ -13,20 +13,20 @@ application_settings:
 
 attempts_and_delay_settings:
   delay_before_start: # 每个账户在启动模块前的随机延迟
-    min: 1 # 单位：秒
-    max: 5 # 单位：秒
-
-  delay_between_games: # 游戏间的随机延迟
-    min: 10 # 单位：秒
+    min: 5 # 单位：秒
     max: 15 # 单位：秒
 
+  delay_between_games: # 游戏间的随机延迟
+    min: 1 # 单位：秒
+    max: 8 # 单位：秒
+
   delay_for_game: # 每局游戏的随机延迟 (在发送分数前“玩”每局游戏的时长)
-    min: 12 # 单位：秒
-    max: 30 # 单位：秒
+    min: 3 # 单位：秒
+    max: 10 # 单位：秒
 
   delay_between_tasks: # 任务间的随机延迟，仅适用于一体化模块
-    min: 5 # 单位：秒
-    max: 25 # 单位：秒
+    min: 1 # 单位：秒
+    max: 10 # 单位：秒
 
   error_delay: 10 # 单位：秒
   max_faucet_attempts: 5 # 水龙头最大尝试次数
@@ -58,8 +58,8 @@ all_in_one_settings:
 
 games_settings:
   top_up_amount: # 充值游戏余额的数量
-    min: 0.015 # 单位：IRYS
-    max: 0.020 # 单位：IRYS
+    min: 0.030 # 单位：IRYS
+    max: 0.050 # 单位：IRYS
 
   games_to_play: # 要玩的游戏列表
     - "snake"
@@ -71,10 +71,10 @@ games_settings:
 
 web3_settings:
   verify_balance: true # 在水龙头操作后和充值游戏余额前验证余额，如果为 true 且余额大于设定的门槛则跳过水龙头/充值
-  faucet_balance_threshold: 0.2 # 领取水龙头前，如果余额大于此门槛，则跳过领取。0 表示只要有余额就跳过。
-  top_up_balance_threshold: 0.003 # 充值游戏余额前，如果游戏余额大于此门槛，则跳过充值。0 表示只要有余额就跳过。
+  faucet_balance_threshold: 0.1 # 领取水龙头前，如果余额大于此门槛，则跳过领取。0 表示只要有余额就跳过。
+  top_up_balance_threshold: 0.03 # 充值游戏余额前，如果游戏余额大于此门槛，则跳过充值。0 表示只要有余额就跳过。
   irys_rpc_url: "https://testnet-rpc.irys.xyz/v1/execution-rpc" # IRYS RPC URL
 
 loop_settings:
   enable_loop: true # 是否启用模块循环执行，如果为 true，则会在所有账户任务完成后等待指定时间后再次执行
-  loop_interval_seconds: 21600 # 循环执行的间隔时间，单位：秒。如果 enable_loop 为 true 且此值大于 0，则会等待此时间后再次执行模块。0 表示不等待。
+  loop_interval_seconds: 43200 # 循环执行的间隔时间，单位：秒。如果 enable_loop 为 true 且此值大于 0，则会等待此时间后再次执行模块。0 表示不等待。
