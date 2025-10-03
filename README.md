@@ -3,14 +3,6 @@
 <div align="center">
   <img src="./console/images/console.png" alt="Irys Bot Console" width="600"/>
   
-  <p align="center">
-    <a href="https://t.me/JamBitPY">
-      <img src="https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram" alt="Telegram Channel">
-    </a>
-    <a href="https://t.me/+-4HDHSdBgiYxNGRi">
-      <img src="https://img.shields.io/badge/Telegram-Chat-blue?style=for-the-badge&logo=telegram" alt="Telegram Chat">
-    </a>
-  </p>
 </div>
 
 ---
