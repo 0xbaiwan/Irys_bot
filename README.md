@@ -3,14 +3,6 @@
 <div align="center">
   <img src="./console/images/console.png" alt="Irys Bot Console" width="600"/>
   
-  <p align="center">
-    <a href="https://t.me/JamBitPY">
-      <img src="https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram" alt="Telegram Channel">
-    </a>
-    <a href="https://t.me/+-4HDHSdBgiYxNGRi">
-      <img src="https://img.shields.io/badge/Telegram-Chat-blue?style=for-the-badge&logo=telegram" alt="Telegram Chat">
-    </a>
-  </p>
 </div>
 
 ---
@@ -61,12 +53,16 @@
 1.  **克隆仓库:**
     ```bash
     git clone https://github.com/0xbaiwan/Irys_bot.git
-    cd Irys-Testnet-Bot
+    cd Irys_bot
     ```
 
 2.  **创建并激活虚拟环境 (强烈推荐):**
     ```bash
+    # 创建虚拟环境
     python -m venv venv
+    # 激活虚拟环境
+    source ~/myenv/bin/activate
+    
     # Windows 用户
     .\venv\Scripts\activate
     # macOS/Linux 用户
